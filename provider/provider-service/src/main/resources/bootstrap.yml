@@ -1,0 +1,52 @@
+spring:
+  profiles:
+    active: dev
+  application:
+    name: provider
+  cloud:
+    nacos:
+      config:
+        namespace: ${spring.profiles.active}
+        file-extension: yaml
+      discovery:
+        namespace: ${spring.profiles.active}
+
+server:
+  port: 27002
+  servlet:
+    context-path: /provider/
+
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 10000
+        readTimeout: 10000
+  okhttp:
+    enabled: false
+  httpclient:
+    enabled: true
+  compression:
+    request:
+      enabled: true
+    response:
+      enabled: true
+
+---
+# 本地服
+spring:
+  profiles: dev
+  cloud:
+    discovery:
+      enabled: true
+    nacos:
+      config:
+#        group: center
+#        name: center-mysql
+      discovery:
+        enabled: true
+        # 定义组名用以区分开发服不同主机项目
+        group: center
+      server-addr: 192.168.27.87:8848
+      username: dev
+      password: 123456
