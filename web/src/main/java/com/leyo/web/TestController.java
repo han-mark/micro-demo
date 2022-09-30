@@ -1,7 +1,7 @@
 package com.leyo.web;
 
 
-import com.leyo.consumer.service.IConsumerTestService;
+import com.leyo.consumer.handler.IConsumerHandler;
 import com.leyo.core.result.JsonResult;
 import com.leyo.security.annotion.Permission;
 import io.swagger.annotations.Api;
@@ -18,14 +18,14 @@ import org.springframework.web.bind.annotation.*;
 @RequiredArgsConstructor
 public class TestController {
 
-    private final IConsumerTestService consumerTestService;
+    private final IConsumerHandler consumerHandler;
 
     @ApiOperation("有返回值")
     @GetMapping("/testReturn/{version}")
     @ApiImplicitParam(name = "version", value = "版本号", required = true, paramType = "path", defaultValue = "v100")
     @Permission(loginRequired = false)
     public JsonResult<Integer> testReturn(@PathVariable("version") String version) {
-        return JsonResult.success(consumerTestService.testReturn(version));
+        return JsonResult.success(consumerHandler.testConsumerReturn(version));
     }
 
     @ApiOperation("无返回值")
@@ -33,7 +33,7 @@ public class TestController {
     @ApiImplicitParam(name = "version", value = "版本号", required = true, paramType = "path", defaultValue = "v100")
     @Permission(loginRequired = false)
     public JsonResult testNoReturn() {
-        consumerTestService.testNoReturn();
+        consumerHandler.testConsumerNoReturn();
         return JsonResult.success();
     }
 }

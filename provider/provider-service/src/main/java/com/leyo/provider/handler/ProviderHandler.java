@@ -1,19 +1,18 @@
-package com.leyo.provider.iml;
+package com.leyo.provider.handler;
 
-import com.leyo.provider.service.ITestService;
 import org.springframework.stereotype.Component;
 
 @Component
-public class TestService implements ITestService {
+public class ProviderHandler implements IProviderHandler {
 
     @Override
-    public Integer testReturn(String msg) {
+    public Integer testProviderReturn(String msg) {
         System.out.println("provider access success");
         return 1024;
     }
 
     @Override
-    public Void testNoReturn() {
+    public Void testProviderNoReturn() {
         System.out.println("provider access success");
         return null;
     }

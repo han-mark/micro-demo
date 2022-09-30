@@ -1,6 +1,6 @@
 package com.leyo.consumer.web;
 
-import com.leyo.consumer.iml.ConsumerTestService;
+import com.leyo.consumer.handler.ConsumerHandler;
 import com.leyo.core.result.JsonResult;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 public class TestController {
 
-    private final ConsumerTestService consumerTestService;
+    private final ConsumerHandler consumerTestService;
 
     @ApiOperation("有返回值")
     @PostMapping("/testReturn")
