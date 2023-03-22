@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>provider</artifactId>
-        <groupId>com.leyo</groupId>
+        <groupId>com.han</groupId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
@@ -14,7 +14,7 @@
     <dependencies>
         <!--   接口层依赖，包含了feign依赖     -->
         <dependency>
-            <groupId>com.leyo</groupId>
+            <groupId>com.han</groupId>
             <artifactId>provider-api</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
