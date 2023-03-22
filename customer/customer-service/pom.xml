@@ -47,12 +47,6 @@
             <version>2.9.2</version>
         </dependency>
 
-        <dependency>
-            <groupId>com.leyo</groupId>
-            <artifactId>customer-api</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-
         <!--   nacos注册中心依赖    -->
         <dependency>
             <groupId>com.alibaba.cloud</groupId>

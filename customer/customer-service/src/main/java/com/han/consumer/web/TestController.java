@@ -1,13 +1,16 @@
-package com.leyo.web;
+package com.han.consumer.web;
 
-
-import com.leyo.consumer.handler.IConsumerHandler;
+import com.han.consumer.handler.ConsumerHandler;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
 
 @Api(value = "测试", tags = "测试")
 @Slf4j
@@ -16,17 +19,17 @@ import org.springframework.web.bind.annotation.*;
 @RequiredArgsConstructor
 public class TestController {
 
-    private final IConsumerHandler consumerHandler;
+    private final ConsumerHandler consumerHandler;
 
     @ApiOperation("有返回值")
-    @GetMapping("/testReturn/{version}")
+    @PostMapping("/testConsumerReturn")
     @ApiImplicitParam(name = "version", value = "版本号", required = true, paramType = "path", defaultValue = "v100")
-    public Integer testReturn(@PathVariable("version") String version) {
-        return consumerHandler.testConsumerReturn(version);
+    public Integer testReturn(@RequestBody String msg) {
+        return consumerHandler.testConsumerReturn(msg);
     }
 
     @ApiOperation("无返回值")
-    @GetMapping("/testNoReturn")
+    @PostMapping("/testConsumerNoReturn")
     @ApiImplicitParam(name = "version", value = "版本号", required = true, paramType = "path", defaultValue = "v100")
     public Void testNoReturn() {
         consumerHandler.testConsumerNoReturn();

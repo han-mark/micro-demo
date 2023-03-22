@@ -1,7 +1,6 @@
-package com.leyo.consumer.web;
+package com.han.provider.web;
 
-import com.leyo.consumer.handler.ConsumerHandler;
-import com.leyo.core.result.JsonResult;
+import com.han.provider.handler.ProviderHandler;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiOperation;
@@ -20,20 +19,20 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 public class TestController {
 
-    private final ConsumerHandler consumerTestService;
+    private final ProviderHandler providerHandler;
 
     @ApiOperation("有返回值")
-    @PostMapping("/testReturn")
+    @PostMapping("/testProviderReturn")
     @ApiImplicitParam(name = "version", value = "版本号", required = true, paramType = "path", defaultValue = "v100")
-    public JsonResult<Integer> testReturn(@RequestBody String msg) {
-        return JsonResult.success(consumerTestService.testReturn(msg));
+    public Integer testReturn(@RequestBody String msg) {
+        return providerHandler.testProviderReturn(msg);
     }
 
     @ApiOperation("无返回值")
-    @PostMapping("/testNoReturn")
+    @PostMapping("/testProviderNoReturn")
     @ApiImplicitParam(name = "version", value = "版本号", required = true, paramType = "path", defaultValue = "v100")
-    public JsonResult testNoReturn() {
-        consumerTestService.testNoReturn();
-        return JsonResult.success();
+    public Void testNoReturn() {
+        providerHandler.testProviderNoReturn();
+        return null;
     }
 }

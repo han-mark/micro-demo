@@ -1,17 +1,22 @@
-package com.leyo.provider;
+package com.han;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.ComponentScan;
 
-@EnableFeignClients(basePackages = "com.leyo.provider.handler")
-@ComponentScan(basePackages = {"com.leyo.*"})
+/**
+ *  ComponentScan 识别com.han.provider/consumer
+ *
+ * @author han
+ */
+@EnableFeignClients(basePackages = {"com.han.*.handler"})
+@ComponentScan(basePackages = {"com.han.*"})
 @SpringBootApplication
-public class ProviderApplication {
+public class WebApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(ProviderApplication.class, args);
+        SpringApplication.run(WebApplication.class, args);
     }
 
 }

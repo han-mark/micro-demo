@@ -11,8 +11,8 @@
     </modules>
 
     <parent>
-        <artifactId>application-structure-demo</artifactId>
-        <groupId>com.leyo</groupId>
+        <artifactId>micro-demo</artifactId>
+        <groupId>com.han</groupId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
@@ -33,7 +33,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>2.3.7.RELEASE</version>
                 <configuration>
-                    <mainClass>com.leyo.customer1.Customer1Application</mainClass>
+                    <mainClass>com.han.customer1.Customer1Application</mainClass>
                 </configuration>
                 <executions>
                     <execution>
