@@ -1,6 +1,5 @@
 package com.leyo.provider.web;
 
-import com.leyo.core.result.JsonResult;
 import com.leyo.provider.handler.ProviderHandler;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
@@ -25,15 +24,15 @@ public class TestController {
     @ApiOperation("有返回值")
     @PostMapping("/testReturn")
     @ApiImplicitParam(name = "version", value = "版本号", required = true, paramType = "path", defaultValue = "v100")
-    public JsonResult<Integer> testReturn(@RequestBody String msg) {
-        return JsonResult.success(testService.testProviderReturn(msg));
+    public Integer testReturn(@RequestBody String msg) {
+        return testService.testProviderReturn(msg);
     }
 
     @ApiOperation("无返回值")
     @PostMapping("/testNoReturn")
     @ApiImplicitParam(name = "version", value = "版本号", required = true, paramType = "path", defaultValue = "v100")
-    public JsonResult testNoReturn() {
+    public Void testNoReturn() {
         testService.testProviderNoReturn();
-        return JsonResult.success();
+        return null;
     }
 }

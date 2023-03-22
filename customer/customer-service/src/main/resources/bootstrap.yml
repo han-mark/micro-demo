@@ -48,5 +48,3 @@ spring:
         # 定义组名用以区分开发服不同主机项目
         group: center
       server-addr: 192.168.27.87:8848
-      username: dev
-      password: 123456

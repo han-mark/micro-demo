@@ -14,9 +14,9 @@
     <dependencies>
         <!-- feign 依赖必须 -->
         <dependency>
-            <groupId>com.leyo</groupId>
-            <artifactId>wms-feign</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
+            <version>2.2.2.RELEASE</version>
         </dependency>
     </dependencies>
 

@@ -12,16 +12,50 @@
     <artifactId>provider-service</artifactId>
 
     <dependencies>
+        <!--   接口层依赖，包含了feign依赖     -->
         <dependency>
             <groupId>com.leyo</groupId>
             <artifactId>provider-api</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
 
+        <!--   spring boot web项目启动依赖     -->
         <dependency>
-            <groupId>com.leyo</groupId>
-            <artifactId>wms-web-feign</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <!--   lombok依赖     -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.20</version>
+        </dependency>
+
+        <!--   swagger依赖-接口文档生成     -->
+        <dependency>
+            <groupId>com.github.xiaoymin</groupId>
+            <artifactId>swagger-bootstrap-ui</artifactId>
+            <version>1.9.6</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+            <version>2.9.2</version>
+        </dependency>
+
+        <!--   nacos注册中心依赖    -->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+            <version>2.2.5.RELEASE</version>
+        </dependency>
+        <!--   nacos配置中心依赖    -->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
+            <version>2.2.5.RELEASE</version>
         </dependency>
     </dependencies>
 
